@@ -68,6 +68,8 @@ extension HomeVC : UITableViewDataSource{
                 //json returns a movieModel that has results in it.
                 cell.movieModelJson = json
                 
+                
+                
               
             }
         }
