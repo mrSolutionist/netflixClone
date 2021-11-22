@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HomeVC: UIViewController {
     
     
@@ -19,7 +20,7 @@ class HomeVC: UIViewController {
     //this contains keys for genre api call
     var genrelist : GenreListModel? {
         
-        //FIXME: DID SET AND RELOAD MAY NOTY BE NECESSARY HERE AS AFTER GETTING KEYS DATA NEEDS TO RELOADED
+    
         didSet{
             //after getting data a table needs to reload and ui elements needs to be used in main thread only
             DispatchQueue.main.async {
@@ -33,8 +34,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
-        
         
     }
     
@@ -59,7 +58,7 @@ extension HomeVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        
+        cell.genreLabel.text = genrelist?.genres?[indexPath.row].name
         //checking for keys
         if let key = genrelist?.genres?[indexPath.row].id {
             
@@ -67,15 +66,11 @@ extension HomeVC : UITableViewDataSource{
             ApiManager.shared.loadDataWithGenreKey(genreKeyValue: key) { json in
                 //json returns a movieModel that has results in it.
                 cell.movieModelJson = json
-                
-                
-                
-              
+
             }
         }
 
         return cell
     }
-    
-  
+
 }

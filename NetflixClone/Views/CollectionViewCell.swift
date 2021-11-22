@@ -7,9 +7,12 @@
 
 import UIKit
 
+
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionCellImage: UIImageView!
+    
+   
     func cellConfigWithData(imageData:Data){
         
         collectionCellImage.image = UIImage(data: imageData)

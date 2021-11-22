@@ -9,8 +9,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell{
     
+    @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+
     var movieModelJson : MovieListModel?{
         
         //FIXME: DID SET AND RELOAD MAY NOTY BE NECESSARY HERE AS AFTER GETTING KEYS DATA NEEDS TO RELOADED
@@ -34,7 +36,7 @@ class TableViewCell: UITableViewCell{
         
         // Configure the view for the selected state
     }
-    
+ 
     
 }
 
@@ -53,7 +55,6 @@ extension TableViewCell: UICollectionViewDataSource  {
             //MARK: STEP 5 (PASS IMAGE DATA TO COLLECTON CELL)
             collectionCell.cellConfigWithData(imageData: imageData!)
         }
-        
         return collectionCell
     }
 }
