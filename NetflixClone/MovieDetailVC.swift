@@ -54,8 +54,11 @@ class MovieDetailVC: UIViewController {
         
     }
     func movieDetails(){
-        let test =  movieObject?.original_title // vlaue present
-        movieTitle?.text =  movieObject?.original_title // cant assign value 
+        if let value =  movieObject {
+            
+            movieTitle?.text =  value.original_title // cant assign value
+        }
+       
         
     }
     

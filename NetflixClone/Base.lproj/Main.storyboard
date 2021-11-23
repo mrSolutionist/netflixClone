@@ -22,11 +22,11 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="li5-yE-FSi" kind="relationship" relationship="viewControllers" id="ZEc-6A-i9A"/>
-                        <segue destination="L4f-hq-cUO" kind="relationship" relationship="viewControllers" id="h2i-LF-Uw1"/>
-                        <segue destination="yYk-rA-dh2" kind="relationship" relationship="viewControllers" id="mVb-Ft-T1a"/>
-                        <segue destination="fsx-36-g2v" kind="relationship" relationship="viewControllers" id="GMi-Yf-ZsP"/>
-                        <segue destination="pDI-2W-2yh" kind="relationship" relationship="viewControllers" id="7PX-Ez-Vq8"/>
+                        <segue destination="c1x-FX-pGD" kind="relationship" relationship="viewControllers" id="stL-Uj-rlH"/>
+                        <segue destination="L4f-hq-cUO" kind="relationship" relationship="viewControllers" id="hg9-64-lJT"/>
+                        <segue destination="yYk-rA-dh2" kind="relationship" relationship="viewControllers" id="xJM-Rc-nZv"/>
+                        <segue destination="fsx-36-g2v" kind="relationship" relationship="viewControllers" id="Iu7-sf-VmG"/>
+                        <segue destination="pDI-2W-2yh" kind="relationship" relationship="viewControllers" id="RXX-iv-IQT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9t-M0-Haa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -50,6 +50,23 @@
             <point key="canvasLocation" x="-3283" y="1047"/>
         </scene>
         <!--Item-->
+        <scene sceneID="1EI-yl-Xge">
+            <objects>
+                <navigationController id="c1x-FX-pGD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yDa-lA-RHD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rRd-7a-2N9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="li5-yE-FSi" kind="relationship" relationship="rootViewController" id="eOA-zG-6DN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQJ-Mw-gFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1558" y="-112"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="4Pa-O7-5Kx">
             <objects>
                 <viewController id="li5-yE-FSi" customClass="HomeVC" customModule="NetflixClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SAb-P3-q4W" customClass="TableView" customModule="NetflixClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="V4t-mh-rwx">
@@ -66,10 +83,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtB-Mx-4er" customClass="HeadImageView" customModule="NetflixClone" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZh-ug-3O1">
-                                            <rect key="frame" x="169" y="443" width="77" height="31"/>
+                                            <rect key="frame" x="169" y="456" width="77" height="31"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
@@ -79,7 +96,7 @@
                                             </buttonConfiguration>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQk-cg-VmH">
-                                            <rect key="frame" x="35" y="432" width="55" height="42"/>
+                                            <rect key="frame" x="35" y="445" width="55" height="42"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="tinted" image="plus" catalog="system" imagePlacement="top" title="My List">
                                                 <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="9"/>
@@ -88,7 +105,7 @@
                                             </buttonConfiguration>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUF-s7-xDE">
-                                            <rect key="frame" x="335" y="432" width="44" height="42"/>
+                                            <rect key="frame" x="335" y="445" width="44" height="42"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="tinted" image="info.circle" catalog="system" imagePlacement="top" title="Info">
                                                 <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="9"/>
@@ -102,12 +119,12 @@
                                         <constraint firstItem="dUF-s7-xDE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XZh-ug-3O1" secondAttribute="trailing" constant="8" symbolic="YES" id="3v9-kp-y4H"/>
                                         <constraint firstAttribute="trailing" secondItem="dUF-s7-xDE" secondAttribute="trailing" constant="35" id="6Yb-9d-0sj"/>
                                         <constraint firstItem="AtB-Mx-4er" firstAttribute="leading" secondItem="V4t-mh-rwx" secondAttribute="leading" id="G12-Bu-FoW"/>
-                                        <constraint firstAttribute="bottom" secondItem="wQk-cg-VmH" secondAttribute="bottom" constant="26" id="Nov-3n-5mb"/>
+                                        <constraint firstAttribute="bottom" secondItem="wQk-cg-VmH" secondAttribute="bottom" constant="13" id="Nov-3n-5mb"/>
                                         <constraint firstItem="wQk-cg-VmH" firstAttribute="leading" secondItem="V4t-mh-rwx" secondAttribute="leading" constant="35" id="PtQ-jf-1Us"/>
-                                        <constraint firstAttribute="bottom" secondItem="dUF-s7-xDE" secondAttribute="bottom" constant="26" id="QWX-CI-Woi"/>
-                                        <constraint firstAttribute="bottom" secondItem="AtB-Mx-4er" secondAttribute="bottom" id="Z19-TK-JPT"/>
+                                        <constraint firstAttribute="bottom" secondItem="dUF-s7-xDE" secondAttribute="bottom" constant="13" id="QWX-CI-Woi"/>
+                                        <constraint firstAttribute="bottom" secondItem="AtB-Mx-4er" secondAttribute="bottom" constant="52" id="Z19-TK-JPT"/>
                                         <constraint firstItem="AtB-Mx-4er" firstAttribute="top" secondItem="V4t-mh-rwx" secondAttribute="top" id="a9f-jJ-Bhl"/>
-                                        <constraint firstAttribute="bottom" secondItem="XZh-ug-3O1" secondAttribute="bottom" constant="26" id="ha8-4H-Kyv"/>
+                                        <constraint firstAttribute="bottom" secondItem="XZh-ug-3O1" secondAttribute="bottom" constant="13" id="ha8-4H-Kyv"/>
                                         <constraint firstAttribute="trailing" secondItem="AtB-Mx-4er" secondAttribute="trailing" id="qtS-HA-iWy"/>
                                         <constraint firstItem="XZh-ug-3O1" firstAttribute="leading" secondItem="wQk-cg-VmH" secondAttribute="trailing" constant="79" id="vXI-v9-r3H"/>
                                     </constraints>
@@ -152,7 +169,6 @@
                                                             <size key="customSize" width="110" height="159"/>
                                                             <connections>
                                                                 <outlet property="collectionCellImage" destination="bef-mQ-IXE" id="3CF-wA-VWz"/>
-                                                                <segue destination="0hl-B9-ZKP" kind="presentation" id="fyA-LP-MUI"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -193,14 +209,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" selectedImage="house" id="Z0U-U1-b4m"/>
+                    <navigationItem key="navigationItem" id="lm8-YM-6DR"/>
                     <connections>
                         <outlet property="tableView" destination="SAb-P3-q4W" id="heN-bb-aGv"/>
                         <outlet property="trendingImage" destination="AtB-Mx-4er" id="efr-Qx-AG1"/>
+                        <segue destination="0hl-B9-ZKP" kind="presentation" id="DDW-8V-pY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pk-Zx-ngC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1659.4202898550725" y="-127.23214285714285"/>
+            <point key="canvasLocation" x="-555.07246376811599" y="-112.5"/>
         </scene>
         <!--Movie DetailVC-->
         <scene sceneID="1tj-jt-b4r">
@@ -292,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLm-aI-2oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-465.21739130434787" y="-127.23214285714285"/>
+            <point key="canvasLocation" x="399" y="-112"/>
         </scene>
         <!--Item-->
         <scene sceneID="PZc-ay-GRY">

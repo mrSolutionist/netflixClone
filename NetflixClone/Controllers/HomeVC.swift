@@ -36,7 +36,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
+        setNavigationBarImage()
+//        self.navigationController?.hidesBarsOnSwipe = true
+      
         
     }
     
@@ -48,6 +50,15 @@ class HomeVC: UIViewController {
         ApiManager.shared.getGenreKeys { genre in
             self.genrelist = genre
         }
+    }
+    
+    private func  setNavigationBarImage(){
+        let logo = UIImage(named: "NetflixLogo")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
+        
     }
 }
 
@@ -61,6 +72,10 @@ extension HomeVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        
+        //setting delegate 
+        cell.collectionViewDataDelegate = self
+        cell.movieDataDelegate = self
         cell.genreLabel.text = genrelist?.genres?[indexPath.row].name
         //checking for keys
         if let key = genrelist?.genres?[indexPath.row].id {
@@ -76,4 +91,43 @@ extension HomeVC : UITableViewDataSource{
         return cell
     }
 
+}
+
+
+//MARK: STEP 8: CONFORM COLLECTIONDELEGAYE TO HOME
+
+extension HomeVC : CollectionViewData{
+    func cellData(movieModelJson: Results, movieDetailObject: MovieDetailModel) {
+       
+        
+        DispatchQueue.main.async {
+            
+            let movieDetailVCObject = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
+          
+            movieDetailVCObject.movieDetailObject = movieDetailObject
+            movieDetailVCObject.movieObject = movieModelJson
+            
+            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
+        }
+    }
+    
+    
+    
+}
+
+
+extension HomeVC : MovieData{
+    func movieData(movieModelJson: Results) {
+        
+        DispatchQueue.main.async {
+            let imageUrl = movieModelJson.poster_path
+            ApiManager.shared.getImageData(imageUrl: imageUrl!) { imageData in
+                self.trendingImage.image = UIImage(data: imageData!)
+        }
+       
+        }
+      
+    }
+    
+    
 }

@@ -11,7 +11,7 @@ struct ApiManager{
     
     static let shared = ApiManager()
     
-    private  let imageBaseUrl = "https://image.tmdb.org/t/p/w185"
+    private  let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
     
     private let baseUrl = "https://api.themoviedb.org/3/"
     
