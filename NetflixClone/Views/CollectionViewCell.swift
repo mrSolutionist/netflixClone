@@ -16,6 +16,6 @@ class CollectionViewCell: UICollectionViewCell {
     func cellConfigWithData(imageData:Data){
         
         collectionCellImage.image = UIImage(data: imageData)
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = 5
     }
 }

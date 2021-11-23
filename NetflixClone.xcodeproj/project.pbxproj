@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2E7BA4274B7DE30041A502 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E7BA3274B7DE30041A502 /* MovieDetailVC.swift */; };
+		BC2E7BA7274B8DFB0041A502 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E7BA5274B8DFB0041A502 /* MovieDetailModel.swift */; };
+		BC2E7BA8274B8DFB0041A502 /* MovieDetailResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E7BA6274B8DFB0041A502 /* MovieDetailResults.swift */; };
+		BC2E7BAE274C712E0041A502 /* SharedFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E7BAD274C712E0041A502 /* SharedFiles.swift */; };
 		BC51B34F274B5ADA0004EF8E /* HeadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51B34E274B5ADA0004EF8E /* HeadImageView.swift */; };
 		BC95E658274A286C00977314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95E657274A286C00977314 /* AppDelegate.swift */; };
 		BC95E65A274A286C00977314 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95E659274A286C00977314 /* SceneDelegate.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC2E7BA3274B7DE30041A502 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDetailVC.swift; path = NetflixClone/MovieDetailVC.swift; sourceTree = SOURCE_ROOT; };
+		BC2E7BA5274B8DFB0041A502 /* MovieDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		BC2E7BA6274B8DFB0041A502 /* MovieDetailResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailResults.swift; sourceTree = "<group>"; };
+		BC2E7BAD274C712E0041A502 /* SharedFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFiles.swift; sourceTree = "<group>"; };
 		BC51B34E274B5ADA0004EF8E /* HeadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeadImageView.swift; path = NetflixClone/HeadImageView.swift; sourceTree = SOURCE_ROOT; };
 		BC95E654274A286C00977314 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC95E657274A286C00977314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +72,23 @@
 			path = Results;
 			sourceTree = "<group>";
 		};
+		BC2E7BA9274B8E010041A502 /* DetailPagModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC2E7BA5274B8DFB0041A502 /* MovieDetailModel.swift */,
+				BC2E7BA6274B8DFB0041A502 /* MovieDetailResults.swift */,
+			);
+			path = DetailPagModel;
+			sourceTree = "<group>";
+		};
+		BC2E7BAC274B9C8E0041A502 /* HelperClass */ = {
+			isa = PBXGroup;
+			children = (
+				BC2E7BAD274C712E0041A502 /* SharedFiles.swift */,
+			);
+			name = HelperClass;
+			sourceTree = "<group>";
+		};
 		BC95E64B274A286C00977314 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,7 @@
 		BC95E656274A286C00977314 /* NetflixClone */ = {
 			isa = PBXGroup;
 			children = (
+				BC2E7BAC274B9C8E0041A502 /* HelperClass */,
 				BC95E66F274A288E00977314 /* Controllers */,
 				BC95E66E274A287900977314 /* Delegate */,
 				BC95E674274A3A8C00977314 /* Views */,
@@ -108,6 +134,7 @@
 		BC95E66F274A288E00977314 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC2E7BA3274B7DE30041A502 /* MovieDetailVC.swift */,
 				BC95E670274A28CA00977314 /* HomeVC.swift */,
 			);
 			path = Controllers;
@@ -127,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				BC95E677274A3BF400977314 /* ApiManager.swift */,
+				BC2E7BA9274B8E010041A502 /* DetailPagModel */,
 				BC0B6466274A6BDD00A7B2C8 /* Results */,
 				BC95E67E274A3DF300977314 /* GetGenres */,
 			);
@@ -218,8 +246,12 @@
 				BC51B34F274B5ADA0004EF8E /* HeadImageView.swift in Sources */,
 				BC95E67D274A3DE300977314 /* GenreListModel.swift in Sources */,
 				BCF59625274A6E90000DE84E /* MovieListModel.swift in Sources */,
+				BC2E7BA7274B8DFB0041A502 /* MovieDetailModel.swift in Sources */,
+				BC2E7BAE274C712E0041A502 /* SharedFiles.swift in Sources */,
+				BC2E7BA4274B7DE30041A502 /* MovieDetailVC.swift in Sources */,
 				BC95E676274A3AF100977314 /* CollectionViewCell.swift in Sources */,
 				BC95E67C274A3DE300977314 /* Genres.swift in Sources */,
+				BC2E7BA8274B8DFB0041A502 /* MovieDetailResults.swift in Sources */,
 				BC95E678274A3BF400977314 /* ApiManager.swift in Sources */,
 				BCF59626274A6E90000DE84E /* Results.swift in Sources */,
 				BC95E671274A28CA00977314 /* HomeVC.swift in Sources */,

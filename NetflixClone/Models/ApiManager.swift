@@ -115,6 +115,24 @@ struct ApiManager{
         complition(imageData)
     }
     
+    //MARK: STEP 6.1 (GET MOVIE DETAIL MODEL)
+    func getMovieDetail(movieId:Int, completion: @escaping (_ json : MovieDetailModel? ) -> ()){
+        let url = URL(string: "\(baseUrl)/movie/\(movieId)/videos\(apiKey)")
+        
+        urlSessionManager(url: url!, toUseDataType: MovieDetailModel.self) { json in
+            
+            switch json
+            {
+            case .success(let MovieDetailModel) :
+                completion(MovieDetailModel)
+                
+            case .failure(let error) :
+                print(error)
+            }
+        }
+      
+    }
+    
     
     
 }
