@@ -26,7 +26,7 @@ class MovieDetailVC: UIViewController {
    
     var movieObject : Results?{
         didSet {
-            movieDetails()
+//            movieDetails()
         }
     }
     
@@ -34,7 +34,14 @@ class MovieDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        if let value =  movieObject {
+            
+            movieTitle?.text =  value.original_title
+            movieDescription.text = value.overview
+            year.text = value.release_date
+           
+        }
+       
         
        
     }

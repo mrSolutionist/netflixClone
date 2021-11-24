@@ -101,13 +101,14 @@ extension HomeVC : CollectionViewData{
        
         
         DispatchQueue.main.async {
-            
+            //MARK: SETP 9: INSTANTISATE NEW VC ONCE CLICKED
             let movieDetailVCObject = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
           
             movieDetailVCObject.movieDetailObject = movieDetailObject
             movieDetailVCObject.movieObject = movieModelJson
             
-            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
+//            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
+            self.navigationController?.present(movieDetailVCObject, animated: true, completion: nil)
         }
     }
     

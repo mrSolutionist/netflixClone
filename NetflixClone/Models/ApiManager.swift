@@ -111,8 +111,15 @@ struct ApiManager{
     {
         let baseImageUrl = imageBaseUrl
         let url = URL(string: "\(baseImageUrl)\(imageUrl)")
-        let imageData = try! Data(contentsOf: url!)
-        complition(imageData)
+        do {
+            let imageData = try Data(contentsOf: url!)
+            complition(imageData)
+        }
+        catch
+        {
+            print("image dsts not foUnt")
+        }
+       
     }
     
     //MARK: STEP 6.1 (GET MOVIE DETAIL MODEL)
