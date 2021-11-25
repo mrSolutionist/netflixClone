@@ -75,7 +75,7 @@ extension HomeVC : UITableViewDataSource{
                 ApiManager.shared.loadDataWithGenreKey(genreKeyValue: key) { json in
                     //json returns a movieModel that has results in it.
                     cell.movieModelJson = json
-                    cell.reloadDelegate = self
+                   
                 }
                 return cell
             }
@@ -131,7 +131,7 @@ extension HomeVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
-            return 540
+            return 700
         }
         return 200
     }
@@ -139,14 +139,4 @@ extension HomeVC: UITableViewDelegate{
 
 
 
-extension HomeVC: TableViewReloadFromTableCell{
-    func reloadTableViewCell() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        
-    }
-    
-    
-}
 
