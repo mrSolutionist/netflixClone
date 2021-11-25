@@ -11,16 +11,10 @@ import UIKit
 class HomeVC: UIViewController {
     
     
-    
-    
-    @IBOutlet weak var trendingImage: UIImageView!  //FIXME: why cant i place this image in table cell view>
-    
     @IBOutlet weak var tableView: UITableView!
     
     //this contains keys for genre api call
     var genrelist : GenreListModel? {
-        
-    
         didSet{
             //after getting data a table needs to reload and ui elements needs to be used in main thread only
             DispatchQueue.main.async {
@@ -30,15 +24,14 @@ class HomeVC: UIViewController {
         }
     }
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         setNavigationBarImage()
-//        self.navigationController?.hidesBarsOnSwipe = true
-      
+        //        self.navigationController?.hidesBarsOnSwipe = true
+        
         
     }
     
@@ -71,64 +64,89 @@ extension HomeVC : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
-        //setting delegate 
-        cell.collectionViewDataDelegate = self
-        cell.movieDataDelegate = self
-        cell.genreLabel.text = genrelist?.genres?[indexPath.row].name
-        //checking for keys
-        if let key = genrelist?.genres?[indexPath.row].id {
+        if indexPath.row == 0{
             
-            //MARK: STEP : 2 (PASS KEY FROM GENRELIST)
-            ApiManager.shared.loadDataWithGenreKey(genreKeyValue: key) { json in
-                //json returns a movieModel that has results in it.
-                cell.movieModelJson = json
-
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeadCell", for: indexPath) as! HeadCell
+            //checking for keys
+            if let key = genrelist?.genres?[indexPath.row].id {
+                
+                //MARK: STEP : 2 (PASS KEY FROM GENRELIST)
+                ApiManager.shared.loadDataWithGenreKey(genreKeyValue: key) { json in
+                    //json returns a movieModel that has results in it.
+                    cell.movieModelJson = json
+                    cell.reloadDelegate = self
+                }
+                return cell
             }
         }
-
-        return cell
+        else{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+            //setting delegate
+            cell.collectionViewDataDelegate = self
+            
+            cell.genreLabel.text = genrelist?.genres?[indexPath.row].name
+            //checking for keys
+            if let key = genrelist?.genres?[indexPath.row].id {
+                
+                //MARK: STEP : 2 (PASS KEY FROM GENRELIST)
+                ApiManager.shared.loadDataWithGenreKey(genreKeyValue: key) { json in
+                    //json returns a movieModel that has results in it.
+                    cell.movieModelJson = json
+                    
+                }
+                return cell
+            }
+        }
+        return UITableViewCell()
     }
-
-}
-
+}                              
 
 //MARK: STEP 8: CONFORM COLLECTIONDELEGAYE TO HOME
-
 extension HomeVC : CollectionViewData{
     func cellData(movieModelJson: Results, movieDetailObject: MovieDetailModel) {
-       
+        
         
         DispatchQueue.main.async {
             //MARK: SETP 9: INSTANTISATE NEW VC ONCE CLICKED
             let movieDetailVCObject = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
-          
+            
             movieDetailVCObject.movieDetailObject = movieDetailObject
             movieDetailVCObject.movieObject = movieModelJson
             
-//            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
+            //            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
             self.navigationController?.present(movieDetailVCObject, animated: true, completion: nil)
         }
     }
     
     
     
+    
+    
 }
 
 
-extension HomeVC : MovieData{
-    func movieData(movieModelJson: Results) {
-        
+extension HomeVC: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 540
+        }
+        return 200
+    }
+}
+
+
+
+extension HomeVC: TableViewReloadFromTableCell{
+    func reloadTableViewCell() {
         DispatchQueue.main.async {
-            let imageUrl = movieModelJson.poster_path
-            ApiManager.shared.getImageData(imageUrl: imageUrl!) { imageData in
-                self.trendingImage.image = UIImage(data: imageData!)
+            self.tableView.reloadData()
         }
-       
-        }
-      
+        
     }
     
     
 }
+

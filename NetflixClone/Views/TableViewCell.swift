@@ -96,11 +96,10 @@ extension TableViewCell: UICollectionViewDelegate{
                 
                 
             }
-            
-           
-            
         }
     }
+    
+
 }
 
 

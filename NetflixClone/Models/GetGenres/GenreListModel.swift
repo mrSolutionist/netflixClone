@@ -12,6 +12,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+
+// this returns a dict with a key an
 struct GenreListModel : Codable {
 	let genres : [Genres]?
 
