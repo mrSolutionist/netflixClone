@@ -93,13 +93,10 @@ extension TableViewCell: UICollectionViewDelegate{
                 //MARK: STEP 7 (delagte: PASS JSON TO MOVIE DETAIL VC)
                 let movieList =  self.movieModelJson?.results?[indexPath.row]
                 self.collectionViewDataDelegate?.cellData(movieModelJson: movieList!, movieDetailObject: json!)
-                
-                
+
             }
         }
     }
-    
-
 }
 
 

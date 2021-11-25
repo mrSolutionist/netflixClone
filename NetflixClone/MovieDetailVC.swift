@@ -6,11 +6,12 @@
 //
 
 import UIKit
-import AVFoundation
+import WebKit
 
 class MovieDetailVC: UIViewController {
 
 
+    @IBOutlet weak var player: WKWebView!
     @IBOutlet weak var movieDescription: UITextView!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var year: UILabel!
@@ -18,48 +19,38 @@ class MovieDetailVC: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var mediaView: UIView!
     
-    var movieDetailObject : MovieDetailModel? {
-        didSet {
-            showVideo()
-        }
-    }
-   
-    var movieObject : Results?{
-        didSet {
-//            movieDetails()
-        }
-    }
+    var movieDetailObject : MovieDetailModel?
+    var movieObject : Results?
     
+
+
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let value =  movieObject {
-            
+           
             movieTitle?.text =  value.original_title
             movieDescription.text = value.overview
             year.text = value.release_date
+            
+            
            
         }
+        if let key = movieDetailObject?.results?[0].key{
+            let videoUrl = URL(string: "https://www.youtube.com/watch?v=\(key)")
+            let request:URLRequest = URLRequest(url: videoUrl!)
+            
+            player.load(request)
+        }
+        
        
         
        
     }
     
-    func showVideo(){
-        
-//        mediaView.backgroundColor = .red
-        
-        let key = movieDetailObject?.results?[0].key
-        let videoUrl = URL(string:"https://www.youtube.com/watch?v=\(key!)")
-        let player = AVPlayer(url: videoUrl!)
-        let playerLayer = AVPlayerLayer(player: player)
-        
-//        mediaView.layer.addSublayer(playerLayer)
-//        playerLayer.frame = mediaView.frame
-        player.play()
-        
-    }
+   
     func movieDetails(){
         if let value =  movieObject {
             

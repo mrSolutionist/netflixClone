@@ -238,8 +238,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-UI-gxC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-qJ-NPv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="FaP-qJ-NPv" firstAttribute="leading" secondItem="UGA-UI-gxC" secondAttribute="leading" id="ExJ-td-nZM"/>
+                                    <constraint firstItem="FaP-qJ-NPv" firstAttribute="top" secondItem="UGA-UI-gxC" secondAttribute="top" id="Lf1-py-yt7"/>
+                                    <constraint firstAttribute="trailing" secondItem="FaP-qJ-NPv" secondAttribute="trailing" id="U0H-DW-UyI"/>
+                                    <constraint firstAttribute="bottom" secondItem="FaP-qJ-NPv" secondAttribute="bottom" id="ZRU-4l-Tku"/>
                                     <constraint firstAttribute="height" constant="200" id="gXe-xs-C2d"/>
                                 </constraints>
                             </view>
@@ -328,6 +342,7 @@
                         <outlet property="mediaView" destination="UGA-UI-gxC" id="kvK-Cw-p3I"/>
                         <outlet property="movieDescription" destination="ePW-kA-2jY" id="lV6-gI-lrh"/>
                         <outlet property="movieTitle" destination="3t0-Fo-s6p" id="dU8-6M-5Yi"/>
+                        <outlet property="player" destination="FaP-qJ-NPv" id="foO-bi-fuP"/>
                         <outlet property="year" destination="sgB-fg-6cV" id="uKY-b5-dRH"/>
                     </connections>
                 </viewController>

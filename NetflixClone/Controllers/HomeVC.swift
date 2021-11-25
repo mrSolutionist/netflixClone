@@ -119,11 +119,7 @@ extension HomeVC : CollectionViewData{
             self.navigationController?.present(movieDetailVCObject, animated: true, completion: nil)
         }
     }
-    
-    
-    
-    
-    
+  
 }
 
 
