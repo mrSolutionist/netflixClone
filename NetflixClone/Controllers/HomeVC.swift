@@ -68,6 +68,7 @@ extension HomeVC : UITableViewDataSource{
         if indexPath.row == 0{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeadCell", for: indexPath) as! HeadCell
+            cell.btnDelegate = self
             //checking for keys
             if let key = genrelist?.genres?[indexPath.row].id {
                 
@@ -104,8 +105,8 @@ extension HomeVC : UITableViewDataSource{
 }                              
 
 //MARK: STEP 8: CONFORM COLLECTIONDELEGAYE TO HOME
-extension HomeVC : CollectionViewData{
-    func cellData(movieModelJson: Results, movieDetailObject: MovieDetailModel) {
+extension HomeVC : MovieDetailPageDelegate{
+    func cellData(movieModelJson: Results?, movieDetailObject: MovieDetailModel?) {
         
         
         DispatchQueue.main.async {
@@ -127,7 +128,7 @@ extension HomeVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
-            return 700
+            return 520
         }
         return 200
     }

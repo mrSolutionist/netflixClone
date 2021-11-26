@@ -43,13 +43,18 @@ class SearchVC: UIViewController, UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // ON EACH TYPE A SEARCH IS CALLED TO GET THE DATA FROM THE SERVER
-        //TODO: CAN THIS EACH CALL BE AVOIDED WITH CACHE? CHECK!
-        ApiManager.shared.searchData(key: searchText) { filteredData in
-            self.filteredData = filteredData.results
-        }
+       
+            ApiManager.shared.searchData(key: searchText) { filteredData in
+                self.filteredData = filteredData.results
+      
+            }
+  
         
-    }
-
+      
+       
+    
+   
+}
 }
 
 extension SearchVC: UITableViewDataSource  {

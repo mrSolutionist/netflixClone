@@ -13,7 +13,7 @@ class SearchTableCell: UITableViewCell  {
 
     @IBOutlet weak var resultCollectionView: UICollectionView!
     
-    var er : [Results]?{
+    var searchResult : [Results]?{
         didSet{
             DispatchQueue.main.async {
                 self.resultCollectionView.reloadData()

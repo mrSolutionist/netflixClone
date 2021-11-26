@@ -8,8 +8,8 @@
 import UIKit
 
 //delegate for passing data to home vc
-protocol CollectionViewData{
-    func cellData(movieModelJson : Results, movieDetailObject : MovieDetailModel)
+protocol MovieDetailPageDelegate{
+    func cellData(movieModelJson : Results?, movieDetailObject : MovieDetailModel?)
 }
 protocol MovieData{
     func movieData(movieModelJson : Results)
@@ -21,7 +21,7 @@ class TableViewCell: UITableViewCell{
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var collectionViewDataDelegate : CollectionViewData?
+    var collectionViewDataDelegate : MovieDetailPageDelegate?
     var movieDataDelegate : MovieData?
     
     var movieModelJson : MovieListModel?
