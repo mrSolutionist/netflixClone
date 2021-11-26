@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: THIS VC DEALS WITH THE SEARCH RESULT
 class SearchVC: UIViewController, UISearchBarDelegate{
     
     
@@ -14,16 +15,20 @@ class SearchVC: UIViewController, UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTable: UITableView!
     
-    var filteredData : [SearchResult]?{
+
+    
+    var key : String!
+    var searchData : MovieListModel?
+    // FILTERED DATA IS STORED HERE
+    var filteredData : [Results]?{
         didSet{
-            DispatchQueue.main.async {
+            DispatchQueue.main.async {   //ONCE DATA RECEVED, RELOADS TABLE
                 self.searchTable.reloadData()
             }
             
         }
     }
-    var key : String!
-    var searchData : SearchModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +39,11 @@ class SearchVC: UIViewController, UISearchBarDelegate{
         
     }
     
+    //THIS FUNC HANDLES THE CHANGES IN THE SEARCH FIELD
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // ON EACH TYPE A SEARCH IS CALLED TO GET THE DATA FROM THE SERVER
+        //TODO: CAN THIS EACH CALL BE AVOIDED WITH CACHE? CHECK!
         ApiManager.shared.searchData(key: searchText) { filteredData in
             self.filteredData = filteredData.results
         }
@@ -45,13 +54,14 @@ class SearchVC: UIViewController, UISearchBarDelegate{
 
 extension SearchVC: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData?.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let  cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableCell") as! SearchTableCell
-//        cell.textLabel?.text = filteredData?DX[indexPath.row].name
+
+        cell.searchResult = filteredData
         
         return cell
     }
