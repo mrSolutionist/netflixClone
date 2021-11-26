@@ -25,12 +25,12 @@ struct ApiManager{
     //use this for getting the list of ids of genre
     private let genreListUrl = "genre/movie/list"
     
-    private let searchUrl = "/search/company?&query="
+    private let searchUrl = "search/company"
     private init(){}
     
     //https://api.themoviedb.org/3/discover/movie?api_key=4aede8b2ecf032bef5691734ca5e1d5a&language=en-US
     
-    //
+    //https://api.themoviedb.org/3/search/company?api_key=4aede8b2ecf032bef5691734ca5e1d5a&query=spider&page=1
     
     //URLSESSION function
     private func urlSessionManager<RespondsTypeName:Codable>(url:URL, toUseDataType:RespondsTypeName.Type,  complition: @escaping (Result<RespondsTypeName,Error>) -> () ){
@@ -140,14 +140,16 @@ struct ApiManager{
       
     }
     
-    func searchData(key:String){
-        let url = URL(string: "\(baseUrl)\(apiKey)\(searchUrl)\(key)")
-        urlSessionManager(url: url!, toUseDataType: SearchModel.self) { json in
+    func searchData(key:String, complition: @escaping(_ filteredData : SearchModel) -> ()){
+        guard let url = URL(string: "\(baseUrl)\(searchUrl)\(apiKey)&query=\(key)") else {
+            return
+        }
+        urlSessionManager(url: url, toUseDataType: SearchModel.self) { json in
             
             switch json
             {
             case .success(let SearchModel) :
-//                completion(SearchModel)
+                complition(SearchModel)
                 
             case .failure(let error) :
                 print(error)
