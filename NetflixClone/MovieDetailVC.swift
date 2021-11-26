@@ -7,17 +7,18 @@
 
 import UIKit
 import WebKit
+import youtube_ios_player_helper
 
-class MovieDetailVC: UIViewController {
+class MovieDetailVC: UIViewController, YTPlayerViewDelegate {
 
 
-    @IBOutlet weak var player: WKWebView!
+  
     @IBOutlet weak var movieDescription: UITextView!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var imdb: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var mediaView: UIView!
+    @IBOutlet weak var mediaView: YTPlayerView!
     
     var movieDetailObject : MovieDetailModel?
     var movieObject : Results?
@@ -34,20 +35,13 @@ class MovieDetailVC: UIViewController {
             movieTitle?.text =  value.original_title
             movieDescription.text = value.overview
             year.text = value.release_date
-            
-            
-           
+  
         }
+  
         if let key = movieDetailObject?.results?[0].key{
-            let videoUrl = URL(string: "https://www.youtube.com/watch?v=\(key)")
-            let request:URLRequest = URLRequest(url: videoUrl!)
-            
-            player.load(request)
+            mediaView.load(withVideoId: key)
         }
-        
-       
-        
-       
+
     }
     
    

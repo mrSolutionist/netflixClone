@@ -25,7 +25,7 @@ struct ApiManager{
     //use this for getting the list of ids of genre
     private let genreListUrl = "genre/movie/list"
     
-    
+    private let searchUrl = "/search/company?&query="
     private init(){}
     
     //https://api.themoviedb.org/3/discover/movie?api_key=4aede8b2ecf032bef5691734ca5e1d5a&language=en-US
@@ -138,6 +138,21 @@ struct ApiManager{
             }
         }
       
+    }
+    
+    func searchData(key:String){
+        let url = URL(string: "\(baseUrl)\(apiKey)\(searchUrl)\(key)")
+        urlSessionManager(url: url!, toUseDataType: SearchModel.self) { json in
+            
+            switch json
+            {
+            case .success(let SearchModel) :
+//                completion(SearchModel)
+                
+            case .failure(let error) :
+                print(error)
+            }
+        }
     }
     
     

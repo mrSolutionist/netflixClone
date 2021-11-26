@@ -236,24 +236,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-UI-gxC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-UI-gxC" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                <subviews>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-qJ-NPv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FaP-qJ-NPv" firstAttribute="leading" secondItem="UGA-UI-gxC" secondAttribute="leading" id="ExJ-td-nZM"/>
-                                    <constraint firstItem="FaP-qJ-NPv" firstAttribute="top" secondItem="UGA-UI-gxC" secondAttribute="top" id="Lf1-py-yt7"/>
-                                    <constraint firstAttribute="trailing" secondItem="FaP-qJ-NPv" secondAttribute="trailing" id="U0H-DW-UyI"/>
-                                    <constraint firstAttribute="bottom" secondItem="FaP-qJ-NPv" secondAttribute="bottom" id="ZRU-4l-Tku"/>
                                     <constraint firstAttribute="height" constant="200" id="gXe-xs-C2d"/>
                                 </constraints>
                             </view>
@@ -342,7 +328,6 @@
                         <outlet property="mediaView" destination="UGA-UI-gxC" id="kvK-Cw-p3I"/>
                         <outlet property="movieDescription" destination="ePW-kA-2jY" id="lV6-gI-lrh"/>
                         <outlet property="movieTitle" destination="3t0-Fo-s6p" id="dU8-6M-5Yi"/>
-                        <outlet property="player" destination="FaP-qJ-NPv" id="foO-bi-fuP"/>
                         <outlet property="year" destination="sgB-fg-6cV" id="uKY-b5-dRH"/>
                     </connections>
                 </viewController>
@@ -366,21 +351,51 @@
             </objects>
             <point key="canvasLocation" x="-2386" y="1047"/>
         </scene>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="uwp-qp-ZLD">
             <objects>
-                <viewController id="fsx-36-g2v" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="fsx-36-g2v" customClass="SearchVC" customModule="NetflixClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghR-47-opr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eua-Fr-a2b">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="7g7-oL-TED">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OAQ-Ca-uvV">
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OAQ-Ca-uvV" id="uVh-Au-9vv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xa6-zC-bFm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xa6-zC-bFm" firstAttribute="bottom" secondItem="eua-Fr-a2b" secondAttribute="bottom" id="5pz-32-RPG"/>
+                            <constraint firstItem="eua-Fr-a2b" firstAttribute="top" secondItem="xa6-zC-bFm" secondAttribute="top" id="7lM-2j-WfM"/>
+                            <constraint firstItem="xa6-zC-bFm" firstAttribute="trailing" secondItem="eua-Fr-a2b" secondAttribute="trailing" id="L5x-Tw-Y51"/>
+                            <constraint firstItem="eua-Fr-a2b" firstAttribute="leading" secondItem="xa6-zC-bFm" secondAttribute="leading" id="syM-eI-l8E"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="W82-ay-hOO"/>
+                    <connections>
+                        <outlet property="searchTable" destination="eua-Fr-a2b" id="1AJ-cG-H9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC6-Pc-hgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1391" y="1047"/>
+            <point key="canvasLocation" x="-1391.304347826087" y="1046.6517857142858"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qKt-1N-xbb">
