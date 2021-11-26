@@ -36,7 +36,7 @@ class SearchVC: UIViewController, UISearchBarDelegate{
         
         searchTable.dataSource = self
         searchBar.delegate = self
-        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     //THIS FUNC HANDLES THE CHANGES IN THE SEARCH FIELD
@@ -65,9 +65,27 @@ extension SearchVC: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let  cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableCell") as! SearchTableCell
-
+        cell.cellDelegate = self
         cell.searchResult = filteredData
         
         return cell
     }
+}
+
+extension SearchVC : MovieDetailPageDelegate{
+    func cellData(movieModelJson: Results?, movieDetailObject: MovieDetailModel?) {
+        
+        DispatchQueue.main.async {
+            //MARK: SETP 9: INSTANTISATE NEW VC ONCE CLICKED
+            let movieDetailVCObject = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
+            
+            movieDetailVCObject.movieDetailObject = movieDetailObject
+            movieDetailVCObject.movieObject = movieModelJson
+            
+            //            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
+            self.navigationController?.present(movieDetailVCObject, animated: true, completion: nil)
+        }
+    }
+    
+    
 }

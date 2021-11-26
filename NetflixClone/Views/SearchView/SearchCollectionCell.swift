@@ -9,8 +9,10 @@ import UIKit
 
 class SearchCollectionCell: UICollectionViewCell {
     
-
+   
     @IBOutlet weak var searchImage: UIImageView!
+    
+
     
     func cellConfig(re:Results){
         guard  let imageUrl = re.poster_path else {return}

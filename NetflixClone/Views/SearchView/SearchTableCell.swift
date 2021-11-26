@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchTableCell: UITableViewCell  {
+class SearchTableCell: UITableViewCell, UICollectionViewDelegate  {
     
  
 
@@ -20,12 +20,13 @@ class SearchTableCell: UITableViewCell  {
             }
         }
     }
-    
+    var cellDelegate : MovieDetailPageDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         resultCollectionView.dataSource = self
+        resultCollectionView.delegate = self
     }
 
  
@@ -35,6 +36,19 @@ class SearchTableCell: UITableViewCell  {
         // Configure the view for the selected state
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let id = searchResult?[indexPath.row].id {
+            
+            ApiManager.shared.getMovieDetail(movieId: id) { json in
+
+                //MARK: STEP 7 (delagte: PASS JSON TO MOVIE DETAIL VC)
+                let movieList =  self.searchResult?[indexPath.row]
+                self.cellDelegate?.cellData(movieModelJson: movieList, movieDetailObject: nil)
+
+            }
+        }
+    }
 }
 
 extension SearchTableCell:UICollectionViewDataSource {
@@ -48,3 +62,5 @@ extension SearchTableCell:UICollectionViewDataSource {
         return cell
     }
 }
+
+
