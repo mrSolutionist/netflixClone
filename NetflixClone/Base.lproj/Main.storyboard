@@ -31,7 +31,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9t-M0-Haa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2535" y="248"/>
+            <point key="canvasLocation" x="-3268" y="120"/>
         </scene>
         <!--Item-->
         <scene sceneID="tRQ-Wp-6f5">
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvg-rU-S9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3283" y="1047"/>
+            <point key="canvasLocation" x="-5455" y="1582"/>
         </scene>
         <!--Item-->
         <scene sceneID="1EI-yl-Xge">
@@ -64,7 +64,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQJ-Mw-gFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1558" y="-112"/>
+            <point key="canvasLocation" x="-1991" y="-113"/>
         </scene>
         <!--Item-->
         <scene sceneID="4Pa-O7-5Kx">
@@ -223,7 +223,6 @@
                     <navigationItem key="navigationItem" id="lm8-YM-6DR"/>
                     <connections>
                         <outlet property="tableView" destination="SAb-P3-q4W" id="heN-bb-aGv"/>
-                        <segue destination="0hl-B9-ZKP" kind="presentation" id="DDW-8V-pY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pk-Zx-ngC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,36 +234,36 @@
             <objects>
                 <viewController storyboardIdentifier="MovieDetailVC" id="0hl-B9-ZKP" customClass="MovieDetailVC" customModule="NetflixClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QVp-D7-mfO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-UI-gxC" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="rm7-N4-0E6"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t0-Fo-s6p">
-                                <rect key="frame" x="20" y="226" width="46.5" height="30"/>
+                                <rect key="frame" x="20" y="270" width="46.5" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3l-Jl-qcK">
-                                <rect key="frame" x="15" y="268" width="41.5" height="20.5"/>
+                                <rect key="frame" x="15" y="312" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgB-fg-6cV">
-                                <rect key="frame" x="110" y="268" width="42.5" height="20.5"/>
+                                <rect key="frame" x="110" y="312" width="42.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2o-Lb-1vO">
-                                <rect key="frame" x="20" y="311" width="374" height="38"/>
+                                <rect key="frame" x="20" y="355" width="374" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="hDJ-LH-Che"/>
                                 </constraints>
@@ -276,7 +275,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXT-09-uga">
-                                <rect key="frame" x="20" y="358" width="374" height="31"/>
+                                <rect key="frame" x="20" y="402" width="374" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="YCW-8p-d28"/>
                                     <constraint firstAttribute="width" constant="374" id="fHK-p7-xTf"/>
@@ -288,7 +287,7 @@
                                 </buttonConfiguration>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="content" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePW-kA-2jY">
-                                <rect key="frame" x="20" y="421" width="374" height="114"/>
+                                <rect key="frame" x="20" y="465" width="374" height="114"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="114" id="J4N-UV-BCm"/>
@@ -298,7 +297,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DURATON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSH-Wn-rpF">
-                                <rect key="frame" x="252" y="268" width="80" height="21"/>
+                                <rect key="frame" x="252" y="312" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -342,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLm-aI-2oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398.55072463768118" y="-112.5"/>
+            <point key="canvasLocation" x="-555" y="605"/>
         </scene>
         <!--Item-->
         <scene sceneID="PZc-ay-GRY">
@@ -358,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyS-fa-xOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2386" y="1047"/>
+            <point key="canvasLocation" x="-3268" y="1582"/>
         </scene>
         <!--SearchVC-->
         <scene sceneID="uwp-qp-ZLD">
@@ -468,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC6-Pc-hgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1391.304347826087" y="1046.6517857142858"/>
+            <point key="canvasLocation" x="-555" y="1474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qKt-1N-xbb">
@@ -484,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMo-PI-eHz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-525" y="1047"/>
+            <point key="canvasLocation" x="752" y="1474"/>
         </scene>
     </scenes>
     <resources>

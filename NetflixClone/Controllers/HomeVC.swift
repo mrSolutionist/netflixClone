@@ -115,9 +115,8 @@ extension HomeVC : MovieDetailPageDelegate{
             
             movieDetailVCObject.movieDetailObject = movieDetailObject
             movieDetailVCObject.movieObject = movieModelJson
-            
-            //            self.navigationController?.pushViewController(movieDetailVCObject, animated: true)
-            self.navigationController?.present(movieDetailVCObject, animated: true, completion: nil)
+          
+            self.present(movieDetailVCObject, animated: true, completion: nil)
         }
     }
   
