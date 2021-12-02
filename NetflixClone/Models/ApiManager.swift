@@ -15,7 +15,7 @@ struct ApiManager{
     
     private let baseUrl = "https://api.themoviedb.org/3/"
     
-    private let apiKey = "?api_key=4aede8b2ecf032bef5691734ca5e1d5a"
+    private let apiKey = "?api_key="
     
     //main url for fetching the movies , add genre or any other to get the data
     private let mainListUrl = "discover/movie"
