@@ -68,9 +68,9 @@ struct ApiManager{
             //json will contain genreList Object , which can be used to get keys
             switch json
             {
-            case .success(let GenreListModel) :
-                complition(GenreListModel)
-                CoreData.shared.saveGenreList(json: GenreListModel)
+            case .success(let genreListData) :
+                complition(genreListData)
+                CoreData.shared.saveGenreList(json: genreListData)
             case .failure(let error) :
                 print(error)
             }

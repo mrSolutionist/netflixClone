@@ -24,6 +24,8 @@ class HomeVC: UIViewController {
         }
     }
     
+    var coreGenre : GenreList?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +62,7 @@ class HomeVC: UIViewController {
 
 extension HomeVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return genrelist?.genres?.count ?? 0
     }
     

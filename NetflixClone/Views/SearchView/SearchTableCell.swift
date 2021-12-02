@@ -44,7 +44,7 @@ class SearchTableCell: UITableViewCell, UICollectionViewDelegate  {
 
                 //MARK: STEP 7 (delagte: PASS JSON TO MOVIE DETAIL VC)
                 let movieList =  self.searchResult?[indexPath.row]
-                self.cellDelegate?.cellData(movieModelJson: movieList, movieDetailObject: nil)
+                self.cellDelegate?.cellData(movieModelJson: movieList, movieDetailObject: json)
 
             }
         }
