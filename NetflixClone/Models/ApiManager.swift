@@ -70,7 +70,7 @@ struct ApiManager{
             {
             case .success(let GenreListModel) :
                 complition(GenreListModel)
-                
+                CoreData.shared.saveGenreList(json: GenreListModel)
             case .failure(let error) :
                 print(error)
             }

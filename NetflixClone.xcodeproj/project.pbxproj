@@ -30,6 +30,7 @@
 		BCBFCB59274FFC8A004EE212 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFCB58274FFC8A004EE212 /* SearchVC.swift */; };
 		BCBFCB5E275004E4004EE212 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFCB5C275004E4004EE212 /* SearchResult.swift */; };
 		BCBFCB5F275004E4004EE212 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFCB5D275004E4004EE212 /* SearchModel.swift */; };
+		BCD405882758EB8000BF9EEB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD405872758EB8000BF9EEB /* CoreData.swift */; };
 		BCF59625274A6E90000DE84E /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF59623274A6E90000DE84E /* MovieListModel.swift */; };
 		BCF59626274A6E90000DE84E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF59624274A6E90000DE84E /* Results.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		BCBFCB58274FFC8A004EE212 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = SOURCE_ROOT; };
 		BCBFCB5C275004E4004EE212 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BCBFCB5D275004E4004EE212 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		BCD405872758EB8000BF9EEB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		BCF59623274A6E90000DE84E /* MovieListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
 		BCF59624274A6E90000DE84E /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		EFFDA317F96D6E9A1F09AD9C /* Pods_NetflixClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetflixClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		BC95E656274A286C00977314 /* NetflixClone */ = {
 			isa = PBXGroup;
 			children = (
+				BCD405842758EB5E00BF9EEB /* CoreData */,
 				BC2E7BAC274B9C8E0041A502 /* HelperClass */,
 				BC95E66F274A288E00977314 /* Controllers */,
 				BC95E66E274A287900977314 /* Delegate */,
@@ -231,6 +234,14 @@
 				BCBFCB5C275004E4004EE212 /* SearchResult.swift */,
 			);
 			name = SearchModel;
+			sourceTree = "<group>";
+		};
+		BCD405842758EB5E00BF9EEB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BCD405872758EB8000BF9EEB /* CoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				BC95E662274A286C00977314 /* NetflixClone.xcdatamodeld in Sources */,
 				BC6767532750913F00D54664 /* SearchTableCell.swift in Sources */,
 				BC95E67D274A3DE300977314 /* GenreListModel.swift in Sources */,
+				BCD405882758EB8000BF9EEB /* CoreData.swift in Sources */,
 				BCF59625274A6E90000DE84E /* MovieListModel.swift in Sources */,
 				BC2E7BA7274B8DFB0041A502 /* MovieDetailModel.swift in Sources */,
 				BC2E7BAE274C712E0041A502 /* SharedFiles.swift in Sources */,
